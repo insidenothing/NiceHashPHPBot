@@ -34,7 +34,7 @@ Parameters:
 */
 $id = 8;
 $key = $_SESSION['key'];
-$orders_json = pull("https://api.nicehash.com/api?method=orders.get&my&id=$id&key=$key&location=1&algo=1");
+$orders_json = pull("https://api.nicehash.com/api?method=orders.get&myid=$id&key=$key&location=1&algo=1");
 ?>
 
 
