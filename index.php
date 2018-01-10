@@ -1,6 +1,16 @@
 <?PHP
-include_once('settings.inc.php');
-/*
+session_start();
+if (isset($_GET['key'])){
+ $_SESSION['key'] = $_GET['key'];
+ echo "<a href='index.php'>Next</a>";
+}
+if (empty($_SESSION['key'])){
+ echo "<form>Key <input name='key'><input type='submit'></form> Key is stored in _SESSION";
+ die();
+}
+ 
+ 
+ /*
 Algorithms are marked with following numbers:
 1 = SHA256
 */
@@ -22,5 +32,9 @@ Parameters:
 - algo - Algorithm marked with ID.
 */
 $id = 8;
+$key = $_SESSION['key'];
 $orders_json = pull("https://api.nicehash.com/api?method=orders.get&my&id=$id&key=$key&location=1&algo=1");
 ?>
+
+
+<?PHP echo $orders_json; ?>
