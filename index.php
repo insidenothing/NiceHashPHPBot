@@ -38,6 +38,8 @@ $orders_json = pull("https://api.nicehash.com/api?method=orders.get&myid=$id&key
 $array = json_decode($orders_json, true)
 ?>
 
-<pre>
-<?PHP print_r($array); ?>
-</pre>
+<?PHP
+ foreach ($array as $key => $value) {
+    echo "$key | $value ";
+}
+?>
