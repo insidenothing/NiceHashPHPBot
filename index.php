@@ -39,12 +39,24 @@ $array = json_decode($orders_json, true)
 ?>
 <table>
 <?PHP
+  echo "<tr>";
+     
+      echo "<td>limit_speed</td>";
+      echo "<td>alive</td>";
+      echo "<td>price</td>";
+      echo "<td>id</td>";
+      echo "<td>type</td>";
+      echo "<td>workers</td>";
+      echo "<td>algo</td>";
+      echo "<td>accepted_speed</td>";
+   
+    echo "</tr>";
  foreach ($array as $key => $value) {
     foreach ($value as $key2 => $value2) {
     
      foreach ($value2 as $key3 => $value3) {
     echo "<tr>";
-      //foreach ($value3 as $key4 => $value4) {
+     
       echo "<td>$value3[limit_speed]</td>";
       echo "<td>$value3[alive]</td>";
       echo "<td>$value3[price]</td>";
@@ -53,11 +65,11 @@ $array = json_decode($orders_json, true)
       echo "<td>$value3[workers]</td>";
       echo "<td>$value3[algo]</td>";
       echo "<td>$value3[accepted_speed]</td>";
-      //}
+   $total = $total + $value3[accepted_speed];
     echo "</tr>";
   }
   }
 }
 ?>
 </table>
-<div>Total Speed: </div>
+<div>Total Speed: <?PHP $total;?></div>
