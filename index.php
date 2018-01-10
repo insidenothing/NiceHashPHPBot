@@ -73,3 +73,4 @@ $array = json_decode($orders_json, true)
 ?>
 </table>
 <title><?PHP echo number_format($total);?> H/s</title>
+<meta http-equiv="refresh" content="15">
