@@ -72,4 +72,4 @@ $array = json_decode($orders_json, true)
 }
 ?>
 </table>
-<div>Total Speed: <?PHP $total;?></div>
+<div>Total Speed: <?PHP echo $total;?></div>
