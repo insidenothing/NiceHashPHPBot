@@ -36,7 +36,7 @@ Parameters:
 $id = 8;
 $key = $_SESSION['key'];
 $orders_json = pull("https://api.nicehash.com/api?method=orders.get&myid=$id&key=$key&location=1&algo=1");
-$array = json_decode($orders_json, true)
+$array = json_decode($orders_json, true);
 ?>
 <table border="1" cellpadding="0" cellspacing="2">
 <?PHP
