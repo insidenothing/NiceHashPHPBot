@@ -40,6 +40,8 @@ $array = json_decode($orders_json, true)
 
 <?PHP
  foreach ($array as $key => $value) {
-    echo "$key | $value ";
+    foreach ($value as $key2 => $value2) {
+    echo "$key2 | $value2 ";
+}
 }
 ?>
