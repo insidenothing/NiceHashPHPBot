@@ -18,7 +18,7 @@ function pull($url){
  $curl = curl_init();
  curl_setopt($curl, CURLOPT_POST, 1);
  curl_setopt($curl, CURLOPT_URL, $url);  
- echo "<li>API: $url</li>";
+ //echo "<li>API: $url</li>";
  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
  //curl_setopt($curl, CURLOPT_POSTFIELDS, $some_data);
  $result = curl_exec($curl);
@@ -55,8 +55,8 @@ $array = json_decode($orders_json, true)
     foreach ($value as $key2 => $value2) {
     
      foreach ($value2 as $key3 => $value3) {
-    echo "<tr>";
-     
+      if ($value3['accepted_speed'] > 0){
+      echo "<tr>";
       echo "<td>$value3[limit_speed]</td>";
       echo "<td>$value3[alive]</td>";
       echo "<td>$value3[price]</td>";
@@ -65,8 +65,9 @@ $array = json_decode($orders_json, true)
       echo "<td>$value3[workers]</td>";
       echo "<td>$value3[algo]</td>";
       echo "<td>$value3[accepted_speed]</td>";
-   $total = $total + $value3[accepted_speed];
-    echo "</tr>";
+      $total = $total + $value3[accepted_speed];
+      echo "</tr>";
+      }
   }
   }
 }
