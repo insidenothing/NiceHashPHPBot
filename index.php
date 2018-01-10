@@ -37,17 +37,19 @@ $key = $_SESSION['key'];
 $orders_json = pull("https://api.nicehash.com/api?method=orders.get&myid=$id&key=$key&location=1&algo=1");
 $array = json_decode($orders_json, true)
 ?>
-
+<table>
 <?PHP
  foreach ($array as $key => $value) {
     foreach ($value as $key2 => $value2) {
     
      foreach ($value2 as $key3 => $value3) {
-    
+    echo "<tr>";
       foreach ($value3 as $key4 => $value4) {
-    echo "$key4 | $value4 ";
+    echo "<td>$key4 | $value4</td>";
   }
+      echo "</tr>";
   }
   }
 }
 ?>
+</table>
