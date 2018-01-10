@@ -1,5 +1,5 @@
 <?PHP
-$target
+$target = 
 session_start();
 if (isset($_GET['key'])){
  $_SESSION['key'] = $_GET['key'];
