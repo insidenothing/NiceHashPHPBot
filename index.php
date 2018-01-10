@@ -19,7 +19,7 @@ function pull($url){
  $curl = curl_init();
  curl_setopt($curl, CURLOPT_POST, 1);
  curl_setopt($curl, CURLOPT_URL, $url);  
- //echo "<li>API: $url</li>";
+ echo "<li>API: $url</li>";
  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
  //curl_setopt($curl, CURLOPT_POSTFIELDS, $some_data);
  $result = curl_exec($curl);
@@ -75,4 +75,14 @@ $array = json_decode($orders_json, true);
 ?>
 </table>
 <title><?PHP echo number_format($total);?> H/s</title>
-<meta http-equiv="refresh" content="15">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="refresh" content="35">
