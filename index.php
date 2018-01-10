@@ -1,4 +1,5 @@
 <?PHP
+$target
 session_start();
 if (isset($_GET['key'])){
  $_SESSION['key'] = $_GET['key'];
@@ -37,7 +38,7 @@ $key = $_SESSION['key'];
 $orders_json = pull("https://api.nicehash.com/api?method=orders.get&myid=$id&key=$key&location=1&algo=1");
 $array = json_decode($orders_json, true)
 ?>
-<table>
+<table border="1" cellpadding="0" cellspacing="2">
 <?PHP
   echo "<tr>";
      
