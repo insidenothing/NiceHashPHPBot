@@ -48,7 +48,7 @@ $array = json_decode($orders_json, true);
       echo "<td>id</td>";
       echo "<td>type</td>";
       echo "<td>workers</td>";
-      echo "<td>algo</td>";
+    
       echo "<td>accepted_speed</td>";
    
     echo "</tr>";
@@ -64,7 +64,7 @@ $array = json_decode($orders_json, true);
       echo "<td>$value3[id]</td>";
       echo "<td>$value3[type]</td>";
       echo "<td>$value3[workers]</td>";
-      echo "<td>$value3[algo]</td>";
+    
       echo "<td>$value3[accepted_speed]</td>";
       $total = $total + $value3[accepted_speed];
       echo "</tr>";
